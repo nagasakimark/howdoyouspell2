@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How do you spell...</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        @font-face {
+            font-family: 'ChalkFont';
+            src: url('assets/fonts/chalk.ttf') format('truetype');
+            font-display: block;
+            font-weight: normal;
+            font-style: normal;
+        }
+        #root {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        /* Dev mode warning */
+        .dev-warning {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #1a1a2e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            z-index: 99999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .dev-warning h1 {
+            color: #ffffcc;
+            margin-bottom: 1rem;
+        }
+        .dev-warning code {
+            background: #333;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .dev-warning p {
+            max-width: 600px;
+            line-height: 1.6;
+            margin: 0.5rem 0;
+        }
+    </style>
+    <script>
+        // Detect if we're being served by Vite or opened directly
+        (function() {
+            // file:// breaks ES modules — show hint only then (HTTPS hosts include GitHub Pages)
+            if (window.location.protocol === 'file:') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    var root = document.getElementById('root');
+                    if (root) {
+                        root.innerHTML = '<div class="dev-warning" style="display:flex">' +
+                            '<h1>How do you spell...</h1>' +
+                            '<p><strong>This file needs to be served by a web server.</strong></p>' +
+                            '<p>For development, run: <code>npm run dev</code></p>' +
+                            '<p>For production, run: <code>npm run build</code>, then serve the <code>dist/</code> folder.</p>' +
+                            '<p style="margin-top:1rem;color:#aaa;font-size:0.9rem">For static hosting (GitHub Pages, Netlify, etc.), deploy the contents of the <code>dist/</code> folder, not this root folder.</p>' +
+                            '</div>';
+                    }
+                });
+            }
+        })();
+    </script>
+  <script type="module" crossorigin src="./assets/index-DeNrCGbK.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C9aCTOc8.css">
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
